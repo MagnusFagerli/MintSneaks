@@ -1,9 +1,8 @@
 import { baseUrl } from "./apiUrl.js";
 import displayMessage from "../Components/DisplayError/displayMessage.js";
-import { renderProducts } from "../Components/Products/renderProducts.js";
+import { renderProducts } from "./Products/renderProducts.js";
 
 const productUrl = baseUrl + "products";
-const container = document.querySelector(".product-container");
 
 async function fetchProducts() {
   try {

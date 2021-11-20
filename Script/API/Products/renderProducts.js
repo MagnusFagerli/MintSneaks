@@ -1,4 +1,5 @@
 const container = document.querySelector(".product-container");
+const apiUploadImg = "http://localhost:1337";
 
 export function renderProducts(products) {
   container.innerHTML = "";
@@ -6,7 +7,7 @@ export function renderProducts(products) {
   products.forEach(function (products) {
     container.innerHTML += `
                             <div class="card" style="width: 18rem;">
-                              <img src="${products.image}" class="card-img-top">
+                              <img src="${apiUploadImg}${products.image.formats.medium.url}" class="card-img-top">
                               <div class="card-body">
                                 <h5 class="card-title">${products.title}</h5>
                                 <p>Price: ${products.price}</p>

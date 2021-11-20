@@ -7,6 +7,12 @@
   margin-right: 50px;
 }
 
+.jumboimg {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 .jumbotron {
   padding: 2px;
   margin: 20px auto;
@@ -23,6 +29,15 @@
 
 .card {
   margin: 10px auto;
+}
+
+footer {
+  background-color: #efebe9;
+}
+
+.hero-alt {
+  background-color: #efebe9;
+  text-align: center;
 }
 
 :root {
