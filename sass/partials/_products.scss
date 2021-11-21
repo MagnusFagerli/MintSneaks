@@ -1,8 +1,44 @@
-.col {
-  margin: 20px auto;
-  max-width: 305px;
+.card {
+  margin: 30px auto;
 }
 
-.card {
-  margin: 10px auto;
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+.productimg {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.description {
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid red;
+  max-width: 700px;
+}
+
+.price {
+  text-align: center;
+  margin: 20px;
+}
+
+#cartbtn {
+  width: 60%;
+  margin: 0px auto;
+  display: block;
+}
+
+@media (min-width: 900px) {
+  #cartbtn {
+    width: 30%;
+  }
 }
