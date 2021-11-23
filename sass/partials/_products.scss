@@ -9,7 +9,7 @@
 
 h1 {
   text-align: center;
-  margin: 20px;
+  padding: 10px;
 }
 
 .productimg {
@@ -35,6 +35,12 @@ h1 {
   width: 60%;
   margin: 0px auto;
   display: block;
+}
+
+.noresult {
+  display: block;
+  margin: 20px auto;
+  font-size: 25px;
 }
 
 @media (min-width: 900px) {

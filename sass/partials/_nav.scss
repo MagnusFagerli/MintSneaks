@@ -12,6 +12,14 @@
   height: 70px;
 }
 
+#searchbar {
+  margin: 0px 0px 0px 5px;
+}
+
+#searchbtn {
+  margin-right: 5px;
+}
+
 @media (min-width: 900px) {
   #searchbar {
     max-width: 10%;
