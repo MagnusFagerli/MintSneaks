@@ -1,5 +1,6 @@
 import displayMessage from "../../Components/DisplayError/displayMessage.js";
-import { handleClick } from "../../Components/Cartfuntions/addToCart.js";
+import handleCartClick from "../../Components/Cartfuntions/addToCart.js";
+import getCart from "../../Components/Cartfuntions/getCart.js";
 
 const apiUploadImg = "http://localhost:1337";
 const container = document.querySelector(".product-details");
@@ -27,6 +28,11 @@ async function fetchProductDetails() {
     console.log(error);
     displayMessage("error", error, ".product-details");
   }
+  const cartButton = document.querySelectorAll("cartbtn");
+
+  cartButton.forEach((button) => {
+    button.addEventListener("click", handleCartClick);
+  });
 }
 
 fetchProductDetails();

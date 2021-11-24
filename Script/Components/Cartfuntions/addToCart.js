@@ -1,31 +1,21 @@
-import { getCartItems } from "./getCart.js";
+import getCart from "./getCart.js";
+import saveCart from "./saveCart.js";
 
-var cartBtn = document.getElementById(".cartbtn");
-if (cartBtn) {
-  cartBtn.addEventListener("click", handleClick);
-  console.log(cartBtn);
-}
+export default function handleCartClick() {
+  const id = this.dataset.id;
 
-export function handleClick() {
-  const id = this.id;
-  const title = this.title;
+  const cart = getCart();
 
-  const currentCart = getCartItems();
-
-  const productExists = currentCart.find(function (cart) {
-    return cart.id === id;
+  // find item in cart
+  const cartItem = cart.find(function (product) {
+    return product.id === id;
   });
 
-  if (productExists === undefined) {
-    const product = { id: id, title: title };
-    currentCart.push(product);
-    saveCart(currentCart);
-  } else {
-    const newCart = currentCart.filter((cart) => cart.id !== id);
-    saveCart(newCart);
+  // item is not in the cart
+  // add it
+  if (cartItem === undefined) {
+    const newItem = { id: id };
+    cart.push(newItem);
+    saveCart(cart);
   }
-}
-
-function saveCart(cart) {
-  localStorage.setItem("cart", JSON.stringify(cart));
 }
