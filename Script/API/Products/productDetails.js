@@ -21,14 +21,14 @@ async function fetchProductDetails() {
                             <img class="productimg" src="${apiUploadImg}${product.image.formats.medium.url}" class="card-img-top">
                             <h1>${product.title}</h1>
                             <h4 class="price">$${product.price}</h4>
-                            <button class="btn btn-secondary" id="cartbtn" type="submit" data-id="${product.id}" data-title="${product.title}">Add to cart</button>
+                            <button class="btn btn-secondary" id="cartbtn" data-id="${product.id}" data-title="${product.title}">Add to cart</button>
                             <p class="description">${product.description}</p>                        
                             `;
   } catch (error) {
     console.log(error);
     displayMessage("error", error, ".product-details");
   }
-  const cartButton = document.querySelectorAll("cartbtn");
+  const cartButton = document.querySelector("cartbtn");
 
   cartButton.forEach((button) => {
     button.addEventListener("click", handleCartClick);
