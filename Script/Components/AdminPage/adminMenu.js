@@ -1,6 +1,6 @@
-import { getUsername } from "../utilities/storage.js";
+import { getUsername } from "../../Utilities/storage.js";
 
-export default function createGreet() {
+export default function createMenu() {
   const { pathname } = document.location;
 
   const container = document.querySelector(".menu-container");
@@ -12,17 +12,17 @@ export default function createGreet() {
   }">Login</a>`;
 
   if (username) {
-    authLink = `<span>Hi, ${username}!</span>`;
+    authLink = `<span class="usergreet">Hi, ${username}!</span>`;
   }
 
-  //console.log(username);
-
   container.innerHTML = `<div class="menu">
-                                <a href="/" class="${
-                                  pathname === "/" ? "active" : ""
-                                }">Home</a>
                                 ${authLink}
+                                <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li></ul>
                         </div>`;
 }
-
-/// This is not final, has to be suited for this project.
