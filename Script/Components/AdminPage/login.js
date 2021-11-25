@@ -1,6 +1,6 @@
-import displayMessage from "./components/displayMessage.js";
-import { saveToken, saveUser } from "./utilities/storage.js";
-import { baseUrl } from "./settings/api.js";
+import displayMessage from "../DisplayError/displayMessage.js";
+import { saveToken, saveUser } from "../../Utilities/storage.js";
+import { baseUrl } from "../../API/apiUrl.js";
 
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
