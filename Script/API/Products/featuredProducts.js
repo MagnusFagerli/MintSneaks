@@ -1,17 +1,16 @@
-import displayMessage from "../../Components/DisplayError/displayMessage.js";
-
 const container = document.querySelector(".featured-container");
-const apiUploadImg = "http://localhost:1337";
+// const apiUploadImg = "http://localhost:1337";
 
-async function fetchProducts() {
-  try {
-    const response = await fetch(productUrl);
-    const products = await response.json();
+export function featuredProducts(products) {
+  container.innerHTML = "";
 
-    renderProducts(products);
-  } catch (error) {
-    console.log(error);
-    displayMessage("error", error, ".featured-container");
+  if (products.featured === true) {
+    products.forEach(function (products) {
+      container.innerHTML = `<div class="featured-product">
+                            <h1>${products.title}</h1>
+                            </div>`;
+    });
   }
 }
-fetchProducts();
+
+featuredProducts();
