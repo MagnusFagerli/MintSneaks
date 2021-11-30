@@ -17,6 +17,7 @@ h1 {
   height: auto;
   margin: 0 auto;
   display: block;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .description {
@@ -31,8 +32,34 @@ h1 {
   margin: 20px;
 }
 
+#shopbtn {
+  width: 60%;
+  margin: 40px auto;
+  display: block;
+}
+
+#viewbtn {
+  margin-bottom: 50px;
+}
+
 #cartbtn {
   width: 60%;
+  margin: 0px auto;
+  display: block;
+}
+
+.featured-container {
+  margin: 0px auto;
+  display: block;
+}
+
+.featured-product {
+  max-width: 250px;
+  margin: 0px auto;
+  display: block;
+}
+
+.featured-title {
   margin: 0px auto;
   display: block;
 }

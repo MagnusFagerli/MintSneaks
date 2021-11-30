@@ -1,5 +1,5 @@
 import displayMessage from "../../Components/DisplayError/displayMessage.js";
-import handleCartClick from "../../Components/Cartfuntions/addToCart.js";
+import { handleClick } from "../../Components/Cartfuntions/addToCart.js";
 
 const apiUploadImg = "http://localhost:1337";
 const container = document.querySelector(".product-details");
@@ -20,16 +20,16 @@ async function fetchProductDetails() {
                             <img class="productimg" src="${apiUploadImg}${product.image.formats.medium.url}" class="card-img-top">
                             <h1>${product.title}</h1>
                             <h4 class="price">$${product.price}</h4>
-                            <button class="btn btn-secondary" id="cartbtn" data-id="${product.id}" data-title="${product.title}">Add to cart</button>
+                            <button class="btn btn-secondary" data-id="${product.id}" data-title="${product.title}">Add to cart</button>
                             <p class="description">${product.description}</p>                        
                             `;
   } catch (error) {
     console.log(error);
     displayMessage("error", error, ".product-details");
   }
-
-  const cartButton = document.getElementById("cartbtn");
-  cartButton.addEventListener("click", handleCartClick());
 }
 
+//const cartButton = document.querySelector(".btn.btn-secondary");
+//cartButton.addEventListener("click", handleClick);
+//handleClick();
 fetchProductDetails();

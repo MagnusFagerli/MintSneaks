@@ -1,21 +1,22 @@
-import getCart from "./getCart.js";
-import saveCart from "./saveCart.js";
+import { getExistingCart } from "./getCart.js";
+import { saveCart } from "./saveCart.js";
 
-export default function handleCartClick() {
+export function handleClick() {
   const id = this.dataset.id;
+  const title = this.dataset.title;
 
-  const cart = getCart();
+  const currentCart = getExistingCart();
 
-  // find item in cart
-  const cartItem = cart.find(function (product) {
-    return product.id === id;
+  const productExists = currentCart.find(function (cart) {
+    return cart.id === id;
   });
 
-  // item is not in the cart
-  // add it
-  if (cartItem === undefined) {
-    const newItem = { id: id };
-    cart.push(newItem);
-    saveCart(cart);
+  if (productExists === undefined) {
+    const product = { id: id, title: title };
+    currentCart.push(product);
+    saveCart(currentCart);
+  } else {
+    const newCart = currentCart.filter((cart) => cart.id !== id);
+    saveCart(newCart);
   }
 }
