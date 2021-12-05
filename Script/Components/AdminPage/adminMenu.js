@@ -12,17 +12,17 @@ export default function createMenu() {
   }">Login</a>`;
 
   if (username) {
-    authLink = `<span class="usergreet">Hi, ${username}!</span>`;
+    authLink = `<span class="usergreet">Hi, ${username}!</span> <button class="btn btn-secondary" id="logoutbtn">Log Out</button>`;
   }
 
   container.innerHTML = `<div class="menu">
-                                ${authLink}
-                                <ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li></ul>
+                          ${authLink}
+                          <ul class="nav">
+                          <li class="nav-item">
+                            <a class="nav-link" href="adminadd.html">Add Products</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="adminedit.html">Edit Products</a>
+                          </li></ul>
                         </div>`;
 }

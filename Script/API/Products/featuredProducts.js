@@ -13,6 +13,7 @@ async function featuredProducts() {
       if (products.featured === true) {
         container.innerHTML = `<div class="featured-product">
                               <img class="productimg" src="${apiUploadImg}${products.image.formats.small.url}" class="card-img-top">
+                              <p></p>
                               <h4 class="featuredtitle">${products.title}</h4>
                               <a href="productdetail.html?id=${products.id}" class="btn btn-secondary" id="viewbtn">View</a>
                               </div>`;
