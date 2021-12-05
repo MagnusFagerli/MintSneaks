@@ -5,7 +5,7 @@ import { searchProducts } from "../Components/SearchProducts/searchProducts.js";
 
 const productUrl = baseUrl + "products";
 
-async function fetchProducts() {
+export async function fetchProducts() {
   try {
     const response = await fetch(productUrl);
     const products = await response.json();

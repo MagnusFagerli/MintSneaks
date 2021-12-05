@@ -64,6 +64,7 @@
 
     <div class="container">
         <div class="message-container"></div>
+        <form>
         <div class="form-group">
             <label for="name">Product Name</label>
             <input
@@ -85,8 +86,14 @@
               id="description"
               placeholder="Description"
             />
+            <label for="image">Image</label>
+            <input
+              class="form-control"
+              id="image"
+              placeholder="Image"
+            />
           <p></p>
-          <button type="submit" class="btn btn-secondary">Add</button>
+          <button class="btn btn-secondary">Add</button>
         </form>
     </div>
 
@@ -125,7 +132,6 @@
     </footer>
   </body>
   <script src="Script/Components/AdminPage/addProducts.js" type="module"></script>
-  <script src="Script/Components/AdminPage/login.js" type="module"></script>
   <script src="Script/Components/AdminPage/adminMenu.js" type="module"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

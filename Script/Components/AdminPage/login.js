@@ -1,14 +1,11 @@
 import displayMessage from "../DisplayError/displayMessage.js";
 import { saveToken, saveUser } from "../../Utilities/storage.js";
 import { baseUrl } from "../../API/apiUrl.js";
-import createMenu from "../AdminPage/adminMenu.js";
 
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const message = document.querySelector(".message-container");
-
-createMenu();
 
 form.addEventListener("submit", submitForm);
 
