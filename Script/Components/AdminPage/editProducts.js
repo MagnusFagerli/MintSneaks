@@ -1,10 +1,6 @@
 import displayMessage from "../DisplayError/displayMessage.js";
-import { getToken } from "../../Utilities/storage.js";
 import { baseUrl } from "../../API/apiUrl.js";
 import { updateProduct } from "../AdminPage/updateProducts.js";
-
-const apiUploadImg = "http://localhost:1337";
-const container = document.querySelector(".product-details");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);

@@ -1,3 +1,7 @@
+import { baseUrl } from "../../API/apiUrl.js";
+import { getToken } from "../../Utilities/storage.js";
+import displayMessage from "../DisplayError/displayMessage.js";
+
 export async function updateProduct(title, price, description, id) {
   const url = baseUrl + "products/" + id;
   const data = JSON.stringify({
