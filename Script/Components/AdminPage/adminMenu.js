@@ -23,7 +23,7 @@ export default function createMenu() {
                             <a class="nav-link" href="adminadd.html">Add Products</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="adminpage.html">View Products</a>
+                            <a class="nav-link" href="adminpage.html">View/Edit Products</a>
                           </li></ul>
                         </div>`;
 }
