@@ -7,7 +7,7 @@ const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const message = document.querySelector(".message-container");
-const image = document.querySelector("#image");
+const image = document.querySelector("#imageUpload");
 const featured = document.querySelector("#featured");
 
 featured.value = false;
@@ -29,12 +29,16 @@ function submitForm(event) {
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
   const featuredValue = newFeatured;
+  const productImage = image.value;
+
+  console.log(productImage);
 
   if (
     titleValue.length === 0 ||
     priceValue.length === 0 ||
     isNaN(priceValue) ||
-    descriptionValue.length === 0
+    descriptionValue.length === 0 ||
+    productImage.length === 0
   ) {
     return displayMessage(
       "warning",
@@ -43,7 +47,13 @@ function submitForm(event) {
     );
   }
 
-  addProduct(titleValue, priceValue, descriptionValue, featuredValue);
+  addProduct(
+    titleValue,
+    priceValue,
+    descriptionValue,
+    featuredValue,
+    productImage
+  );
 }
 
 async function addProduct(title, price, description) {
@@ -54,6 +64,7 @@ async function addProduct(title, price, description) {
     price: price,
     description: description,
     featured: featured.value,
+    image: image,
   });
 
   const token = getToken();
