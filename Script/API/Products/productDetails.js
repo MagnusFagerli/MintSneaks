@@ -17,7 +17,7 @@ async function fetchProductDetails() {
     container.innerHTML = "";
 
     container.innerHTML = ` 
-                            <img class="productimg" src="${apiUploadImg}${product.image.formats.medium.url}" class="card-img-top">
+                            <img class="productimg" src="${apiUploadImg}${product.image.formats.small.url}" class="card-img-top">
                             <h1>${product.title}</h1>
                             <h4 class="price">$${product.price}</h4>
                             <button class="btn btn-secondary" data-id="${product.id}" data-title="${product.title}">Add to cart</button>

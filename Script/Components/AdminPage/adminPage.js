@@ -14,7 +14,7 @@ const productUrl = baseUrl + "products";
 
     json.forEach(function (product) {
       container.innerHTML += `<div class="card" style="width: 18rem;">
-                            <img src="${apiUploadImg}${product.image.formats.medium.url}" class="card-img-top">
+                            <img src="${apiUploadImg}${product.image.formats.small.url}" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">${product.title}</h5>
                                 <p>$${product.price}</p>

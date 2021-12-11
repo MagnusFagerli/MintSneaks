@@ -1,6 +1,7 @@
 import displayMessage from "../DisplayError/displayMessage.js";
 import { baseUrl } from "../../API/apiUrl.js";
 import { updateProduct } from "../AdminPage/updateProducts.js";
+import deleteButton from "./deleteProducts.js";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -25,6 +26,8 @@ const loading = document.querySelector(".lds-roller");
     price.value = details.price;
     description.value = details.description;
     idInput.value = details.id;
+
+    deleteButton(details.id);
   } catch (error) {
     console.log(error);
   } finally {

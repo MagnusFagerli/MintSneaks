@@ -1,10 +1,21 @@
 .card {
   margin: 30px auto;
+  width: 300px;
+  height: 400px;
+}
+
+.card-img-top {
+  width: 200px;
+  height: 250px;
 }
 
 .product-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.card-title {
+  font-family: "Bebas Neue", cursive;
 }
 
 h1 {
@@ -59,15 +70,20 @@ h1 {
   display: block;
 }
 
-.featured-title {
+.featuredtitle {
   margin: 0px auto;
   display: block;
+  font-family: "Bebas Neue", cursive;
 }
 
 .noresult {
   display: block;
   margin: 20px auto;
   font-size: 25px;
+}
+
+.delete-container {
+  margin: 20px 0px 30px 0px;
 }
 
 @media (min-width: 900px) {

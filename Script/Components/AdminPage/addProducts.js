@@ -8,6 +8,7 @@ const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const message = document.querySelector(".message-container");
 const image = document.querySelector("#image");
+const featured = document.querySelector("#featured");
 
 form.addEventListener("submit", submitForm);
 
@@ -45,6 +46,7 @@ async function addProduct(title, price, description) {
     title: title,
     price: price,
     description: description,
+    featured: true,
   });
 
   const token = getToken();
