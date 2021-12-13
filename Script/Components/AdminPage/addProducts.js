@@ -29,7 +29,7 @@ function submitForm(event) {
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
   const featuredValue = newFeatured;
-  const productImage = image.value;
+  const productImage = image;
 
   console.log(productImage);
 
@@ -56,7 +56,7 @@ function submitForm(event) {
   );
 }
 
-async function addProduct(title, price, description) {
+async function addProduct(title, price, description, image) {
   const url = baseUrl + "products";
 
   const data = JSON.stringify({
