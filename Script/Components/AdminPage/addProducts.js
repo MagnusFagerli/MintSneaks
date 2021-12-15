@@ -2,7 +2,7 @@ import displayMessage from "../DisplayError/displayMessage.js";
 import { getToken } from "../../Utilities/storage.js";
 import { baseUrl } from "../../API/apiUrl.js";
 
-const form = document.querySelector("form");
+const form = document.getElementById("form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
@@ -18,69 +18,25 @@ function clickFeatured() {
 }
 const newFeatured = featured.value;
 
-form.addEventListener("submit", submitForm);
+form.addEventListener("submit", uploadProduct);
 
-function submitForm(event) {
+async function uploadProduct(event) {
   event.preventDefault();
 
-  message.innerHTML = "";
-
-  const titleValue = title.value.trim();
-  const priceValue = parseFloat(price.value);
-  const descriptionValue = description.value.trim();
-  const featuredValue = newFeatured;
-  const productImage = image;
-
-  console.log(productImage);
-
-  if (
-    titleValue.length === 0 ||
-    priceValue.length === 0 ||
-    isNaN(priceValue) ||
-    descriptionValue.length === 0 ||
-    productImage.length === 0
-  ) {
-    return displayMessage(
-      "warning",
-      "Please supply proper values",
-      ".message-container"
-    );
-  }
-
-  addProduct(
-    titleValue,
-    priceValue,
-    descriptionValue,
-    featuredValue,
-    productImage
-  );
-}
-
-async function addProduct(title, price, description, image) {
+  const form = event.target;
+  const token = getToken();
   const url = baseUrl + "products";
 
-  const data = JSON.stringify({
-    title: title,
-    price: price,
-    description: description,
-    featured: featured.value,
-    image: image,
-  });
-
-  const token = getToken();
-
-  const options = {
-    method: "POST",
-    body: data,
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
   try {
-    const response = await fetch(url, options);
-    const json = await response.json();
+    const response = await fetch(url, {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
 
     if (json.created_at) {
       displayMessage("success", "Product created", ".message-container");
@@ -93,7 +49,6 @@ async function addProduct(title, price, description, image) {
 
     console.log(json);
   } catch (error) {
-    console.log(error);
-    displayMessage("error", "An error occured", ".message-container");
+    console.warn(error);
   }
 }
