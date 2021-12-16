@@ -1,9 +1,9 @@
-export function getExistingFavs() {
-  const favs = localStorage.getItem("favourites");
+export function getExistingCart() {
+  const cart = localStorage.getItem("cart");
 
-  if (favs === null) {
+  if (cart === null) {
     return [];
   } else {
-    return JSON.parse(favs);
+    return JSON.parse(cart);
   }
 }

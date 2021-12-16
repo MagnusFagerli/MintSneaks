@@ -1,63 +1,32 @@
-import { getExistingFavs } from "./utils/favFunctions.js";
-import products from "./data/products.js";
+import { getExistingCart } from "../../Components/Cartfuntions/getCart.js";
 
-const productContainer = document.querySelector(".product-container");
+const cartButton = document.querySelector("#cartbtn");
 
-const favourites = getExistingFavs();
+cartButton.addEventListener("click", handleClick);
 
-products.forEach((product) => {
-  let cssClass = "far";
-
-  // check through favs array
-  // does the product id exist in the favs array
-  const doesObjectExist = favourites.find(function (fav) {
-    console.log(fav);
-
-    return parseInt(fav.id) === product.id;
-  });
-
-  console.log(doesObjectExist);
-
-  // if is in the array, change the style of the i element
-  if (doesObjectExist) {
-    cssClass = "fa";
-  }
-
-  productContainer.innerHTML += `<div class="product">
-                                    <h4>${product.name}</h4>
-                                    <i class="${cssClass} fa-heart" data-id="${product.id}" data-name="${product.name}"></i>
-                                </div>`;
-});
-
-const favButtons = document.querySelectorAll(".product i");
-
-favButtons.forEach((button) => {
-  button.addEventListener("click", handleClick);
-});
-
-function handleClick() {
-  this.classList.toggle("fa");
-  this.classList.toggle("far");
-
+export function handleClick() {
   const id = this.dataset.id;
-  const name = this.dataset.name;
+  const title = this.dataset.title;
+  const price = this.dataset.price;
 
-  const currentFavs = getExistingFavs();
+  console.log(event);
 
-  const productExists = currentFavs.find(function (fav) {
-    return fav.id === id;
+  const currentCart = getExistingCart();
+
+  const productExists = currentCart.find(function (cart) {
+    return cart.id === id;
   });
 
   if (productExists === undefined) {
-    const product = { id: id, name: name };
-    currentFavs.push(product);
-    saveFavs(currentFavs);
+    const product = { id: id, title: title, price: price };
+    currentCart.push(product);
+    saveCart(currentCart);
   } else {
-    const newFavs = currentFavs.filter((fav) => fav.id !== id);
-    saveFavs(newFavs);
+    const newCart = currentCart.filter((cart) => cart.id !== id);
+    saveCart(newCart);
   }
 }
 
-function saveFavs(favs) {
-  localStorage.setItem("favourites", JSON.stringify(favs));
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
 }

@@ -29,7 +29,7 @@ function submitForm(event) {
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
   const featuredValue = newFeatured;
-  const productImage = image;
+  const productImage = image.append(Blob);
 
   console.log(productImage);
 
@@ -37,8 +37,7 @@ function submitForm(event) {
     titleValue.length === 0 ||
     priceValue.length === 0 ||
     isNaN(priceValue) ||
-    descriptionValue.length === 0 ||
-    productImage.length === 0
+    descriptionValue.length === 0
   ) {
     return displayMessage(
       "warning",
