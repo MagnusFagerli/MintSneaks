@@ -51,6 +51,17 @@ a.nav-link {
   display: block;
 }
 
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .hero-alt {
   max-width: 750px;
   margin: 0px auto;
@@ -119,7 +130,7 @@ p {
 .card {
   margin: 30px auto;
   width: 300px;
-  height: 400px;
+  height: 410px;
   -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -145,6 +156,15 @@ p {
 h1, .h1 {
   text-align: center;
   padding: 10px;
+}
+
+.productheader {
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .productimg {
@@ -245,6 +265,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  margin-top: auto;
 }
 
 .lds-roller {
@@ -390,6 +411,23 @@ footer {
 
 #logoutbtn {
   margin: 10px;
+}
+
+#addbtn {
+  margin-top: 30px;
+  margin-bottom: 150px;
+}
+
+.form-check {
+  margin-top: 20px;
+}
+
+.form-check-label {
+  margin-top: -20px;
+}
+
+label {
+  margin: 20px 0px 10px 0px;
 }
 
 .message {

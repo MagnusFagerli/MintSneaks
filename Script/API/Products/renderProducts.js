@@ -11,7 +11,7 @@ export function renderProducts(products) {
                               <div class="card-body">
                                 <h5 class="card-title">${products.title}</h5>
                                 <p>$${products.price}</p>
-                                <a href="productdetail.html?id=${products.id}" class="btn btn-secondary">View</a>
+                                <a href="productdetail.html?id=${products.id}" id="viewmore" class="btn btn-secondary">View</a>
                               </div>
                             </div>    
     `;

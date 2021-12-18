@@ -5,6 +5,12 @@
   display: block;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .hero-alt {
   max-width: 750px;
   margin: 0px auto;
