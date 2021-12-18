@@ -8,6 +8,7 @@ export function handleClick() {
   const id = this.dataset.id;
   const title = this.dataset.title;
   const price = this.dataset.price;
+  const image = this.dataset.image;
 
   console.log(event);
 
@@ -18,7 +19,7 @@ export function handleClick() {
   });
 
   if (productExists === undefined) {
-    const product = { id: id, title: title, price: price };
+    const product = { id: id, title: title, price: price, image: image };
     currentCart.push(product);
     saveCart(currentCart);
   } else {

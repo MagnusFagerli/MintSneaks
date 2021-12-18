@@ -18,16 +18,15 @@ async function fetchProductDetails() {
     getExistingCart();
 
     const cartBtn = document.querySelector("#cartbtn");
+    var id = cartBtn.getAttribute("data-id");
     var title = cartBtn.getAttribute("data-title");
     var price = cartBtn.getAttribute("data-price");
     var image = cartBtn.getAttribute("data-image");
 
+    cartBtn.setAttribute("data-id", product.id);
     cartBtn.setAttribute("data-title", product.title);
     cartBtn.setAttribute("data-price", product.price);
-    cartBtn.setAttribute(
-      "data-image",
-      url + product.image.formats.small.thumbnail
-    );
+    cartBtn.setAttribute("data-image", product.image.formats.small.url);
 
     container.innerHTML = ` <div class="product">
                             <img class="productimg" src="${apiUploadImg}${product.image.formats.small.url}" class="card-img-top">

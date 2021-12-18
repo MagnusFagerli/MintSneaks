@@ -76,6 +76,12 @@ h2, .h2 {
   font-family: "Bebas Neue", cursive;
 }
 
+h5, .h5 {
+  text-align: center;
+  padding: 10px;
+  font-family: "Bebas Neue", cursive;
+}
+
 p {
   font-family: "Abel", sans-serif;
 }
@@ -114,6 +120,8 @@ p {
   margin: 30px auto;
   width: 300px;
   height: 400px;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .card-img-top {
@@ -127,6 +135,7 @@ p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-bottom: 200px;
 }
 
 .card-title {
@@ -175,6 +184,12 @@ h1, .h1 {
   display: block;
 }
 
+#remove {
+  width: 60%;
+  margin: 40px auto;
+  display: block;
+}
+
 .featured-container {
   margin: 0px auto;
   display: block;
@@ -192,10 +207,27 @@ h1, .h1 {
   font-family: "Bebas Neue", cursive;
 }
 
+.total-price-container {
+  margin: 40px 0px 120px 0px;
+}
+
 .noresult {
   display: block;
   margin: 20px auto;
   font-size: 25px;
+}
+
+.cartprice {
+  font-size: 19px;
+}
+
+.cart-price-view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .delete-container {
