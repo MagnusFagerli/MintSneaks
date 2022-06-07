@@ -19,7 +19,7 @@ The goal was to create an e-commerce website that has both customer-facing and a
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+gh repo clone MagnusFagerli/MintSneaks
 ```
 
 or 
@@ -30,12 +30,6 @@ download from GitHub.
 
 As it is not built with a JS framework, this project is best run with Live View extension in VSCode.
 
-## Contributing
-
-No need to contrubute to this repo.
-
 ## Contact
-
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
 
 [My LinkedIn page](https://www.linkedin.com/in/magnus-fagerli-386128b3/)
