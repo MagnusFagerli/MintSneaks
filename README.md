@@ -10,6 +10,7 @@ The goal was to create an e-commerce website that has both customer-facing and a
 
 ## Built With
 
+- [React](https://reactjs.org/)
 - [Bootstrap](https://getbootstrap.com)
 
 ## Getting Started
